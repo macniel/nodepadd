@@ -1,0 +1,36 @@
+<div class="dialog-workspace">
+<div #openDialog class="dialog">
+  <div class="dialog-content">
+  <h2>Select Log to load</h2>
+  <select [size]="files.length" [(ngModel)]="selectedFile">
+    <option *ngFor="let file of files" [value]="file">
+      {{file}}
+    </option>
+  </select>
+  <div class="dialog-actions">
+  <button (click)="load(selectedFile)" class="primary">Load</button>
+  <button (click)="actionCancel()">Cancel</button>
+  </div></div>
+</div>
+
+<div #saveDialog class="dialog">
+  <div class="dialog-content">
+    <h2>Save Log as</h2>
+    <input [(ngModel)]="selectedFile">
+  <div class="dialog-actions">
+  <button (click)="save(selectedFile)" class="primary">Save</button>
+  <button (click)="actionCancel()">Cancel</button>
+  </div></div>
+</div>
+
+</div>
+<div class="toolbar">
+<button (click)="menuFileOpen()">Load</button>
+<button (click)="menuFileSave()">Save</button>
+<button (click)="menuFileSaveAs()">Save as...</button>
+<button (click)="menuPlayback()" #playback>Playback</button>
+<button (click)="menuNextVoice()">{{currentVoice != null ? currentVoice.name: 'Default Voice'}}</button>
+</div>
+<div class="content">
+<textarea [(ngModel)]="padd"></textarea>
+</div>
