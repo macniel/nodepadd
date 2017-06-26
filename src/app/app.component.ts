@@ -11,12 +11,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   files = [];
   voices:SpeechSynthesisVoice[] = [];
   currentVoice:SpeechSynthesisVoice = null;
+  utterance:SpeechSynthesisUtterance = new SpeechSynthesisUtterance();
   voiceIndex = 0;
   selectedFile = '';
 
   @ViewChild('saveDialog') saveDialog;
   @ViewChild('openDialog') openDialog;
   @ViewChild('playback') playbackButton;
+  @ViewChild('textPadd') textPadd;
 
   ngOnInit() {
     if ( localStorage.getItem('padd-index') == null ) {
@@ -75,20 +77,24 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.timeoutResumeInfinity = setTimeout(this.resumeInfinity, 1000);
 }
 
-  public menuPlayback() {
-    if ( this.padd.trim() !== '' ) {
-      let utterance = new SpeechSynthesisUtterance(this.padd);
-      
-utterance.onstart = (event) => {
-    this.resumeInfinity();
-};
+  public getSelectionOfText() {
+    const textArea = this.textPadd.nativeElement;
+    return textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
+  }
 
-utterance.onend = (event) => {
-    clearTimeout(this.timeoutResumeInfinity);
-};
-      utterance.voice = this.currentVoice;
-      window.speechSynthesis.speak(utterance);
+  public menuPlayback() {
+    if ( this.getSelectionOfText() !== '' ) {
+      this.utterance.text = this.getSelectionOfText();
+    } else if ( this.padd.trim() !== '' ) {
+      
+        this.utterance.text = this.padd;  
+      
+    } else {
+      this.utterance.text = 'No Log specified';
     }
+    this.utterance.voice = this.currentVoice;
+    window.speechSynthesis.speak(this.utterance);
+    
   }
 
   public save(paddFile) {

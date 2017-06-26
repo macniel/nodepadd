@@ -32,5 +32,5 @@
 <button (click)="menuNextVoice()">{{currentVoice != null ? currentVoice.name: 'Default Voice'}}</button>
 </div>
 <div class="content">
-<textarea [(ngModel)]="padd"></textarea>
+<textarea #textPadd [(ngModel)]="padd"></textarea>
 </div>

@@ -43,6 +43,7 @@ textarea {
     color: yellow;
     font-size: 16pt;
     text-transform: uppercase;
+    resize: none;
 }
 textarea:hover, textarea:active, textarea:focus {
     outline: none;
