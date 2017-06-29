@@ -16,13 +16,11 @@
 .dialog {
     
     pointer-events: all;
-
-    background-color: rgba(0, 0, 0, .25);
 }
 .dialog-content {
     padding: 20px;
     border-radius: 4px;
-    background-color: rgba(244, 244, 244, 0.88);
+    background-color: black;
 }
 
 .dialog-content h2 {
@@ -40,10 +38,9 @@
 
 .toolbar {
     height: 28px;
-    border-left: 8px solid #9933AA;
-    border-right: 8px solid #9933AA;
+    border-left-width: 8px;
+    border-right-width: 8px;
     margin: 0 28px 10px 28px;
-    background-color: #9933AA;
     position: relative;
 
 }
@@ -56,9 +53,8 @@
     border-bottom-left-radius: 14px;
     border-right: 4px solid black;
     display: block;
-    background-color: #9933AA;
     top: 0;
-    left: -38px;
+    left: -32px;
 }
 .toolbar:after {
     content: '';
@@ -69,23 +65,65 @@
     border-bottom-right-radius: 14px;
     border-left: 4px solid black;
     display: block;
-    background-color: #9933AA;
     top: 0;
-    right: -38px;
+    right: -32px;
 }
 .toolbar button {
    border-radius: 0; 
    position: relative;
-   margin: 0 1px;
    box-shadow: none;
+   height: 28px;
 }
 .toolbar button:before {
     content: '';
     display: block;
     width: 4px;
     position: absolute;
-    top: -1px;
+    top: 0px;
     left: -4px;
     height: 28px;
     background-color: black;
+}
+.toolbar button.last {
+    border-right: 4px solid black;
+}
+.dialog {
+    position: relative;
+
+}
+.dialog:before {
+    position: absolute;
+    content: "";
+    top: -30px;
+    bottom: 0;
+    left: -10px;
+    right: 0;
+    z-index: -1;
+    border-top-left-radius: 30px 30px;
+}
+.dialog-content {
+    border-radius: 0;
+    border-top-left-radius: 30px;
+    
+}
+.dialog h2 {
+    position: absolute;
+    top: -25px;
+    text-align: right;
+    left: 10px;
+    right: 10px;
+}
+.dialog h2:after {
+    position: absolute;
+    content: "";
+    right: -30px;
+    top: -4px;
+    height: 30px;
+    width: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.pull-right {
+    float: right;
 }

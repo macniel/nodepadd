@@ -1,36 +1,36 @@
 <div class="dialog-workspace">
-<div #openDialog class="dialog">
+<div #openDialog class="dialog F2375">
   <div class="dialog-content">
-  <h2>Select Log to load</h2>
+  <h2 class="F2375">Select Log to load</h2>
   <select [size]="files.length" [(ngModel)]="selectedFile">
     <option *ngFor="let file of files" [value]="file">
       {{file}}
     </option>
   </select>
   <div class="dialog-actions">
-  <button (click)="load(selectedFile)" class="primary">Load</button>
-  <button (click)="actionCancel()">Cancel</button>
+  <button (click)="load(selectedFile)" class="R2375">Load</button>
+  <button (click)="actionCancel()" class="C2375">Cancel</button>
   </div></div>
 </div>
 
-<div #saveDialog class="dialog">
+<div #saveDialog class="dialog F2375">
   <div class="dialog-content">
-    <h2>Save Log as</h2>
+    <h2 class="F2375">Save Log as</h2>
     <input [(ngModel)]="selectedFile">
   <div class="dialog-actions">
-  <button (click)="save(selectedFile)" class="primary">Save</button>
-  <button (click)="actionCancel()">Cancel</button>
+  <button (click)="save(selectedFile)" class="R2375">Save</button>
+  <button (click)="actionCancel()" class="C2375">Cancel</button>
   </div></div>
 </div>
 
 </div>
-<div class="toolbar">
-<button (click)="menuFileOpen()">Load</button>
-<button (click)="menuFileSave()">Save</button>
-<button (click)="menuFileSaveAs()">Save as...</button>
-<button (click)="menuPlayback()" #playback>Playback</button>
-<button (click)="menuNextVoice()">{{currentVoice != null ? currentVoice.name: 'Default Voice'}}</button>
+<div class="toolbar F2375">
+<button (click)="menuFileOpen()" class="C2375">Load</button>
+<button (click)="menuFileSave()" class="P2375">Save</button>
+<button (click)="menuFileSaveAs()" class="B2375">Save as...</button>
+<button (click)="menuPlayback()" class="P2375 last" #playback>Playback</button>
+<button (click)="menuNextVoice()" class="tR2375 pull-right">{{currentVoice != null ? currentVoice.name: 'Default Voice'}}</button>
 </div>
 <div class="content">
-<textarea #textPadd [(ngModel)]="padd"></textarea>
+<textarea #textPadd [(ngModel)]="padd" class="tD2375"></textarea>
 </div>

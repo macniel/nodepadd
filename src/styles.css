@@ -1,24 +1,60 @@
+.C2375,.C2375:before,.C2375:after {
+    background-color: #6688CC;
+    border-color: #6688CC;
+}
+.R2375,.R2375:before,.R2375:after {
+    background-color: #4455BB;
+    border-color: #4455BB;
+}
+.tR2375 {
+    color: #4455BB;
+    background-color: black;
+}
+.F2375,.F2375:before,.F2375:after {
+    background-color: #9977AA;
+    border-color: #9977AA;
+}
+.E2375,.E2375:before,.E2375:after {
+    background-color: #774466;
+    border-color: #774466;
+}
+.B2375,.B2375:before,.B2375:after {
+    background-color: #DD6644;
+    border-color: #DD66AA;
+}
+.P2375,.P2375:before,.P2375:after {
+    background-color: #AA5533;
+    border-color: #AA5533;
+}
+.S2375,.S2375:before,.S2375:after {
+    background-color: #BB6622;
+    border-color: #BB6622;
+}
+.D2375,.D2375:before,.D2375:after {
+    background-color: #EE9955;
+    border-color: #EE9955;
+}
+.tD2375 {
+    color: #EE9955;
+    background-color: black;
+}
+.BLACK,.BLACK:before,.BLACK.after {
+    background-color: black;
+    border-color: black;
+}
+
 /* You can add global styles to this file, and also import other style files */
 button {
-    border: 1px solid #9933AA;
+    border: 0;
     border-radius: 10px;
     padding: 5px 10px;
     color: white;
-    background-color: #9933AA;
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
-}
-button.primary {
-    background-color: #99aaff;
 }
 button:hover, button:active, button:focus {
     outline: none;
-    background-color: #9933ff;
 }
 
-button:active {
-    box-shadow: 0;
-}
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 8pt;
@@ -40,7 +76,6 @@ textarea {
     height: 100%;
     border: 0;
     background-color: black;
-    color: yellow;
     font-size: 16pt;
     text-transform: uppercase;
     resize: none;
